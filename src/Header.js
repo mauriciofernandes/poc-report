@@ -11,10 +11,21 @@ class Header extends Component {
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
-          <NavItem eventKey={1} href="#">
+          <NavItem
+            eventKey={1}
+            href="#"
+            name="page1"
+            onClick={this.props.changePage}
+          >
             Example 1
           </NavItem>
-          <NavItem eventKey={2} href="#">
+          <NavItem
+            eventKey={2}
+            href="#"
+            value={2}
+            name="page2"
+            onClick={this.props.changePage}
+          >
             Example 2
           </NavItem>
         </Nav>

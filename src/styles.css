@@ -16,7 +16,9 @@ body {
 }
 
 .navbar-default .navbar-brand,
-.navbar-default .navbar-nav > li > a {
+.navbar-default .navbar-nav > li > a,
+.navbar-default .navbar-nav > li > a:focus,
+.navbar-default .navbar-nav > li > a:hover {
   color: #ffffff;
 }
 
@@ -25,6 +27,14 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.0625);
   height: 444px;
   padding: 20px;
+  position: relative;
+}
+
+.content.no-border {
+  background-color: #fff;
+  border: none;
+  height: auto;
+  padding: 0px;
   position: relative;
 }
 
@@ -79,4 +89,18 @@ button.close {
   vertical-align: middle;
   background-color: #c9302c;
   border-radius: 10px;
+}
+
+.react-datepicker-wrapper {
+  float: right;
+}
+
+.react-datepicker-wrapper input {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-weight: normal;
+  padding: 5px;
+}
+
+.modal-header .close {
+  margin-top: 2px;
 }

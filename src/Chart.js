@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import { isEmpty } from "lodash";
-import { Table, Button, Row, Col } from "react-bootstrap";
+import DatePicker from "react-datepicker";
+import moment from "moment";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const data = {
   labels: [
@@ -34,6 +37,13 @@ const options = {
 };
 
 class Chart extends Component {
+  constructor() {
+    super();
+    this.state = {
+      startDate: null
+    };
+  }
+
   handleClick = e => {
     if (!isEmpty(e)) {
       const activeItem = e[0]._index;
@@ -46,11 +56,33 @@ class Chart extends Component {
     }
   };
 
+  handleChange = date => {
+    this.setState({
+      startDate: date
+    });
+    this.props.updateValue({
+      label: moment(date).format("DD/MM"),
+      value: "12"
+    });
+  };
+
   render() {
-    const { handleClick } = this;
+    const {
+      handleClick,
+      handleChange,
+      state: { startDate }
+    } = this;
     return (
       <div className="content">
-        <h6>Chart Name</h6>
+        <h6>
+          Chart Name
+          <DatePicker
+            selected={startDate}
+            onChange={handleChange}
+            dateFormat="DD/MM/YYYY"
+            placeholderText="Click to select a date"
+          />
+        </h6>
         <Line
           data={data}
           options={options}

@@ -5,19 +5,21 @@ import { Table, Button, Badge } from "react-bootstrap";
 class Report extends Component {
   render() {
     const {
-      props: { data, cleanValue }
+      props: { data, cleanValue, example2 }
     } = this;
     return (
-      <div className="content">
-        <h6>
-          Report
-          {!isEmpty(data) && (
-            <button type="button" className="close" onClick={cleanValue}>
-              <span aria-hidden="true">×</span>
-              <span className="sr-only">Close</span>
-            </button>
-          )}
-        </h6>
+      <div className={example2 ? "content no-border" : "content"}>
+        {!example2 && (
+          <h6>
+            Report
+            {!isEmpty(data) && (
+              <button type="button" className="close" onClick={cleanValue}>
+                <span aria-hidden="true">×</span>
+                <span className="sr-only">Close</span>
+              </button>
+            )}
+          </h6>
+        )}
         {isEmpty(data) ? (
           <div className="message">
             No record selected. <br />
