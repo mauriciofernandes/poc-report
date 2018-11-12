@@ -1,4 +1,82 @@
+body {
+  background: #f9fafb;
+  color: #72777a;
+  font-size: 14px;
+}
+
 .App {
   font-family: sans-serif;
   text-align: center;
+}
+
+.navbar-default {
+  background: #073459;
+  border-color: #073459;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-brand,
+.navbar-default .navbar-nav > li > a {
+  color: #ffffff;
+}
+
+.content {
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.0625);
+  height: 444px;
+  padding: 20px;
+  position: relative;
+}
+
+.content h6 {
+  color: #72777a;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  padding: 0px 0px 15px;
+  text-align: left;
+}
+
+.content table {
+  text-align: left;
+}
+
+.content .table > tbody > tr > td {
+  height: 51px;
+  vertical-align: middle;
+}
+
+.content .message {
+  left: 0px;
+  margin-top: -20px;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+
+.small-padding-left {
+  padding-left: 7.5px;
+}
+
+.small-padding-right {
+  padding-right: 7.5px;
+}
+
+button.close {
+  margin-top: -4px;
+}
+
+.badge-danger {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  background-color: #c9302c;
+  border-radius: 10px;
 }
